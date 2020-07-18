@@ -19,6 +19,30 @@ function woodCalculator(chair, table, bed){
 var furnituretResult = woodCalculator( 14, 4, 7 );
 console.log(furnituretResult);
 
+
+function brickCalculator(floor) {
+    var brick = 0;
+        if (floor <=10) {
+            brick = floor * 15 * 1000;
+        } else if (floor <=20) {
+            var firstTenFloor = 10*15*1000;
+            var remaining = floor -10;
+            var nextTenFloor = remaining *12*1000;
+            brick = firstTenFloor + nextTenFloor;
+        }
+        else{
+            var firstTenFloor = 10*15*1000;
+            var nextTenFloor = 10*12*1000;
+            var remaining = floor - 20;
+            var aboveTwentyFloor = remaining *10*1000;
+            brick = firstTenFloor + nextTenFloor + aboveTwentyFloor;
+        }
+        return brick;
+    }
+    var count = brickCalculator(42)
+    console.log(count);
+
+
 function tinyFriends(ages) {
     var lowest = ages [0];
     for(var i = 0; i < ages.length; i++) {
